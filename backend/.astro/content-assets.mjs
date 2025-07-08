@@ -1,0 +1,8 @@
+
+import __ASTRO_IMAGE_IMPORT_22s2fS from "./big-fish-eat-little-fish-art.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2F2024%2Fbig-fish-eat-little-fish-art%2Findex.mdx";
+import __ASTRO_IMAGE_IMPORT_14rDD1 from "./lenin-observing-internet.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2F2024%2Flenin-observing-internet%2Findex.mdx";
+import __ASTRO_IMAGE_IMPORT_Z1Yh8LE from "./clear-relationship-schema.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2F2024%2Fclear-relationship-schema%2Findex.mdx";
+import __ASTRO_IMAGE_IMPORT_lNsYF from "./japan-art.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2F2024%2Fjapan-art%2Findex.mdx";
+import __ASTRO_IMAGE_IMPORT_ZvhiN2 from "./modern-political-situation-in-russia.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2F2024%2Fmodern-socialism-in-russia%2Findex.mdx";
+export default new Map([["./big-fish-eat-little-fish-art.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2F2024%2Fbig-fish-eat-little-fish-art%2Findex.mdx", __ASTRO_IMAGE_IMPORT_22s2fS], ["./lenin-observing-internet.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2F2024%2Flenin-observing-internet%2Findex.mdx", __ASTRO_IMAGE_IMPORT_14rDD1], ["./clear-relationship-schema.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2F2024%2Fclear-relationship-schema%2Findex.mdx", __ASTRO_IMAGE_IMPORT_Z1Yh8LE], ["./japan-art.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2F2024%2Fjapan-art%2Findex.mdx", __ASTRO_IMAGE_IMPORT_lNsYF], ["./modern-political-situation-in-russia.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2F2024%2Fmodern-socialism-in-russia%2Findex.mdx", __ASTRO_IMAGE_IMPORT_ZvhiN2]]);
+		

@@ -1,0 +1,13 @@
+
+export default new Map([
+["src/content/blog/2024/big-fish-eat-little-fish-art/index.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2F2024%2Fbig-fish-eat-little-fish-art%2Findex.mdx&astroContentModuleFlag=true")],
+["src/content/blog/2024/german-work-document-1963/index.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2F2024%2Fgerman-work-document-1963%2Findex.mdx&astroContentModuleFlag=true")],
+["src/content/blog/2024/lenin-observing-internet/index.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2F2024%2Flenin-observing-internet%2Findex.mdx&astroContentModuleFlag=true")],
+["src/content/blog/2024/clear-relationship-schema/index.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2F2024%2Fclear-relationship-schema%2Findex.mdx&astroContentModuleFlag=true")],
+["src/content/blog/2024/first-blog-post/index.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2F2024%2Ffirst-blog-post%2Findex.mdx&astroContentModuleFlag=true")],
+["src/content/blog/2024/japan-art/index.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2F2024%2Fjapan-art%2Findex.mdx&astroContentModuleFlag=true")],
+["src/content/blog/2024/modern-socialism-in-russia/index.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2F2024%2Fmodern-socialism-in-russia%2Findex.mdx&astroContentModuleFlag=true")],
+["src/content/blog/2024/listen-for-input-change-programatically/index.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2F2024%2Flisten-for-input-change-programatically%2Findex.mdx&astroContentModuleFlag=true")],
+["src/content/blog/2024/quote-adaptation/index.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2F2024%2Fquote-adaptation%2Findex.mdx&astroContentModuleFlag=true")],
+["src/content/blog/2024/sample-html-document-all-tags/index.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2F2024%2Fsample-html-document-all-tags%2Findex.mdx&astroContentModuleFlag=true")]]);
+		

@@ -1,0 +1,146 @@
+---
+import type {HTMLAttributes} from 'astro/types'
+import Logo from '~/components/logo/index.astro'
+import {getCollection} from "astro:content";
+const {href, class: className, ...props} = Astro.props
+const {pathname} = Astro.url
+const isActive = href === pathname || href === pathname.replace(/\/$/, '')
+---
+
+<!--
+<a href={href} class:list={[className, { active: isActive }]} {...props}>
+  <slot />
+</a>
+-->
+<header class="header">
+    <div class="container xxl">
+        <div class="grid">
+            <div class="left">
+                <a href="/" class="link">
+                    <Logo class="logo"/>
+                </a>
+            </div>
+            <div>
+                <nav class="navbar">
+                    <ul class="nav">
+                        <li class="item">
+                            <a href="#" class="link">
+                                Work
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#" class="link">
+                                Meet Vladimir
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#" class="link">
+                                Books
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#" class="link">
+                                Heroes
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <div class="right">
+                    <a href="/" class="link">
+                        <Logo class="logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style lang="scss">
+
+  @use "sass:list";
+  @use "sass:string";
+  @use "sass:meta";
+  @use "sass:map";
+
+  @use "~/styles/app.scss" as app;
+
+  $header_navbar: (
+    height: 100%,
+    --navbar-grid-template-columns : 1fr,
+    _subclasses: (
+      '.nav' : (
+        justify-content :center,
+        --nav-gap: 1.5rem,
+      )
+    )
+  );
+
+  $header-section: (
+    top: 10px,
+    position: fixed,
+    width: 100%,
+    z-index: app.get-config(app.$config, 'z-index.header'),
+    /***/
+    _subclasses : (
+      '.grid' : (
+        display: grid,
+        grid-template-columns: auto 1fr auto,
+        gap: 5px,
+        /***/
+        _subclasses : (
+          '& > div' : (
+            padding: 10px,
+            background: var(--background),
+            border-bottom: var(--border),
+            box-shadow: string.unquote('rgba(13, 13, 17, 0.4) 0px 5px 25px'),
+            border-radius: 5px,
+            align-self: center,
+            justify-self: center,
+            height: 100%,
+            width: 100%,
+            /***/
+            _colors: (
+              dark: (
+                background: rgba(23, 59, 86, 1),
+                border: 1px solid #173b56,
+              ),
+            ),
+            /***/
+            _subclasses : (
+              '.navbar' : $header_navbar
+            )
+          )
+        )
+      ),
+    ),
+    _responsive: (
+      md: (
+        /*padding: 10px 5px,*/
+      ),
+    ),
+  );
+
+  @include app.generate-component(
+      $header-section,
+      "header",
+      app.$config,
+      app.$theme,
+      (add_variable_prefix: false)
+  );
+</style>
+
+<script type="text/javascript">
+    const nav = document.querySelector('.header')
+
+    const stickyNavigation = () => {
+        if (window.scrollY > nav.offsetHeight) {
+            // nav offsetHeight = height of nav
+            nav.classList.add('sticky', 'modify');
+        } else {
+            nav.classList.remove('sticky');
+        }
+    }
+    window.addEventListener('scroll', stickyNavigation)
+</script>

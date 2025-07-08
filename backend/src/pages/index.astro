@@ -1,0 +1,93 @@
+---
+import {Image, Picture} from "astro:assets";
+import LayoutIndex from "../layouts/index.astro";
+---
+
+<LayoutIndex>
+    <div class="intro">
+        <h2>Career Highlights</h2>
+
+        Versatile verbal and written communication skills with a proven ability to drive progress towards organizational
+        goals while displaying dedication, flexibility, and management skills.
+        Assertive and enthusiastic when working in teams of all sizes; possessing a rigorous work ethic and a broad
+        knowledge of software development and optimization.
+        Highly detail-oriented with strong organizational skills and refined analytical abilities to break down a
+        problem into its root causes, identify key drivers, and propose sound alternatives.
+        Self-starter, who enjoys challenges and will see complex projects through from inception to completion
+        regardless of external challenges to achieve customer satisfaction and retention.
+        Excellent problem resolution skills coupled with an ability to analyze emergent business problems and
+        opportunities, and take responsibility for their formulation and execution.
+        Exemplified leadership skills by working to train, mentor and empower peers and junior employees through
+        workflow delegation and regular performance appraisals.
+    </div>
+    <div class="section">
+        <h2>Professional Summary</h2>
+
+        Innovative full-stack software engineering professional offering 15+ years of experience across the full
+        software development lifecycle from concept to delivery of robust applications. Expertise in various advanced
+        development methodologies, tools and processes for the design and launch of software solutions. Recognized for
+        exceptional troubleshooting skills with an ability to quickly find problems, analyze code, research
+        alternatives, and engineer cost-effective solutions. Strong background in coding, web standards, and open
+        source. Experience with a wide range of software libraries, tools, and languages. Spearheaded end-to-end project
+        lifecycles, mobilizing resources and teams effectively to complete projects on time and under budget. Able to
+        communicate with a diverse range of stakeholders to secure buy-in.
+    </div>
+</LayoutIndex>
+
+<style lang="scss">
+
+  @use "sass:list";
+  @use "sass:string";
+  @use "sass:meta";
+  @use "sass:map";
+
+  @use "~/styles/app.scss" as app;
+
+  $intro-section: (
+    min-height: 500px,
+    background: linear-gradient(90deg, #141414 0, #0b1c23),
+    /***/
+    _responsive: (
+      md: (
+        /*padding: 10px 5px,*/
+      ),
+    ),
+  );
+
+  @include app.generate-component(
+      $intro-section,
+      'intro',
+      app.$config,
+      app.$theme,
+      (add_variable_prefix: false)
+  );
+</style>
+
+<style lang="scss">
+
+  @use "sass:list";
+  @use "sass:string";
+  @use "sass:meta";
+  @use "sass:map";
+
+  @use "~/styles/app.scss" as app;
+
+  $section: (
+    min-height: 500px,
+    background: linear-gradient(155deg, #002b48 40%, #0b202a),
+    /***/
+    _responsive: (
+      md: (
+        /*padding: 10px 5px,*/
+      ),
+    ),
+  );
+
+  @include app.generate-component(
+      $section,
+      'section',
+      app.$config,
+      app.$theme,
+      (add_variable_prefix: false)
+  );
+</style>

@@ -1,0 +1,103 @@
+---
+import { getEntry } from "astro:content";
+
+import LayoutBlog from "../layouts/blog.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+
+
+import { format_date } from "../lib/utils";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => {
+    const [year, slug] = post.slug.split("/");
+    return {
+      params: {
+        slug: slug.toString(),
+      },
+      props: post,
+    };
+  });
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<LayoutBlog>
+  <div class="post">
+    <div class="container xxl">
+      <div class="content">
+        <h1 class="title">{post.data.title}</h1>
+        <div class="description">
+          {format_date(post.data.published_date)}
+          —
+          <div class="tags">
+            {
+              post.data.tags.map((tag) => {
+                return (
+                  <a href={"/tags/" + tag} target="_self" title={tag}>
+                    <span class="badge">{tag}</span>
+                  </a>
+                );
+              })
+            }
+          </div>
+          — name
+        </div>
+        <p></p>
+        <p>{post.data.description}</p>
+        <Content />
+      </div>
+    </div>
+  </div>
+</LayoutBlog>
+
+<style lang="scss">
+  @use "sass:list";
+  @use "sass:string";
+  @use "sass:meta";
+  @use "sass:map";
+
+  @use "../styles/app.scss" as app;
+
+  @use "@nulllogic/scssleon/scss/mixins.scss" as mixins;
+  @use "@nulllogic/scssleon/scss/functions.scss" as functions;
+
+  $components: ("badge", "button");
+
+  @each $component in $components {
+    @include meta.load-css(
+      "@nulllogic/scssleon/scss/components/#{$component}",
+      $with: (config: app.$config, theme: app.$theme)
+    );
+  }
+
+  $post-section: (
+    margin: 25px 0,
+    subclasses: (
+      ".title": (),
+      ".description": (
+        display: flex,
+        align-items: center,
+        subclasses: (
+          ".tags": (
+            margin: 0 10px,
+            display: flex,
+            gap: 10px,
+            text-transform: capitalize,
+          ),
+        ),
+      ),
+    ),
+  );
+
+  @include mixins.generate-component(
+    $post-section,
+    "post",
+    app.$config,
+    app.$theme
+  );
+</style>
+`
+

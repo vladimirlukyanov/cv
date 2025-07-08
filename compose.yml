@@ -1,0 +1,22 @@
+services:
+  watch:
+    stdin_open: true
+    tty: true
+    build:
+      context: "./.config/docker"
+      dockerfile: watch.Dockerfile
+    working_dir: "/opt/app"
+    volumes:
+      - type: bind
+        source: ./backend
+        target: /opt/app
+      - "~/Developer/my/scssleon/scss:/opt/app/src/styles/scss"
+    ports:
+      - "8082:4321"
+    container_name: lukyanov
+    entrypoint:
+      - sh
+      - -euc
+      - |
+        npm i
+        npm run start --host 0.0.0.0 --verbose
